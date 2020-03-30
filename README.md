@@ -1,7 +1,7 @@
 # node-red-contrib-vnc
 Node-red node allowing control of a VNC Server
 
-*N.B. This has been thrown together for a personal project and it's most-likely not efficent and doesn't have much error handling, so no warranties or guarantees are provided. I have released it as I cannot find VNC nodes elsewhere so it may be useful to others for similar purposes, and will release updates when time permits.*
+*N.B. This has been thrown together for a personal project and it's most-likely not efficent and doesn't have much error handling! I have released it as I cannot find VNC nodes elsewhere so it may be useful to others for similar purposes. I will try to release updates when time permits*
 
 
 ## Current Nodes
@@ -13,7 +13,6 @@ Node-red node allowing control of a VNC Server
 * **screenshot** - Returns a screenshot from the remote server as a PNG buffer
 
 ## To-Do
-* Add error handling
 * Change credentials to use Node's credentials functions
 * Example flows to follow
 

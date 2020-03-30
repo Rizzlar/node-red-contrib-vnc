@@ -3,6 +3,8 @@ module.exports = function(RED) {
       RED.nodes.createNode(this,config);
       var node = this;
       this.client = RED.nodes.getNode(config.client);
+      this.client.nodes.push(this);
+      this.status({fill: "yellow", shape: "ring", text: "connecting"});
 
       if(this.client){
         this.client.rfb.on('clipboard', function(newPasteBufData) {
@@ -12,7 +14,7 @@ module.exports = function(RED) {
       } else {
         console.log("Not Configured");
       }
-
+      
       node.on('input', function(msg) {
         var cData = msg.payload.toString();
         this.client.rfb.updateClipboard(cData);
