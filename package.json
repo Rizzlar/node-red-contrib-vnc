@@ -8,6 +8,10 @@
     "jimp": "^0.10.0",
     "rfb2": "^0.2.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rizzlar/node-red-contrib-vnc.git"
+  },
   "keywords": [ "node-red", "vnc" ],
   "node-red": {
     "nodes": {
