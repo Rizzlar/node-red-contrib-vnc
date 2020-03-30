@@ -1,0 +1,39 @@
+<script type="text/javascript">
+  RED.nodes.registerType('keyboard',{
+      category: 'vnc',
+      color: '#a6bbcf',
+      defaults: {
+          name: {value:""},
+          client: {value:"", type:"vnc-client"}
+      },
+      inputs:1,
+      outputs: 0,
+      icon: "font-awesome/fa-keyboard-o",
+      label: function() {
+          return this.name||"keyboard";
+      }
+  });
+</script>
+
+<script type="text/html" data-template-name="keyboard">
+  <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-client"><i class="icon-tag"></i> VNC Client</label>
+    <input type="text" id="node-input-client" placeholder="Client">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="keyboard">
+  <p>Send keypress to remote system</p>
+  <p>There are two options available for using this node</p>
+  <p><strong>msg.payload</strong> can be a string which will be sent as a series of keypresses.</p>
+  <p><strong>OR</strong></p>
+  <p>
+    <strong>msg.payload.code</strong> Keycode<br>
+    <strong>msg.payload.state</strong> State of the key
+  </p>
+
+</script>

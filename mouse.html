@@ -1,0 +1,41 @@
+<script type="text/javascript">
+  RED.nodes.registerType('mouse',{
+      category: 'vnc',
+      color: '#a6bbcf',
+      defaults: {
+          name: {value:""},
+          client: {value:"", type:"vnc-client"}
+      },
+      inputs:1,
+      outputs: 0,
+      icon: "font-awesome/fa-mouse",
+      label: function() {
+          return this.name||"mouse";
+      }
+  });
+</script>
+
+<script type="text/html" data-template-name="mouse">
+  <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-client"><i class="icon-tag"></i> VNC Client</label>
+    <input type="text" id="node-input-client" placeholder="Client">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="mouse">
+  <p>Send mouse movements to remote system</p>
+  <strong>Usage</strong>
+  <p>
+    <strong>msg.payload.x</strong> X-cordinate of mouse<br>
+    <strong>msg.payload.y</strong> Y-cordinate of mouse<br>
+    <strong>msg.payload.mask</strong> The current state of buttons 1 to 8 are represented
+    by bits 0 to 7 of button-mask, respectively; 0 means up, 1 means down. On a conventional mouse, buttons 1, 2, and 3 correspond to the left,
+    middle, and right buttons on the mouse.  On a wheel mouse, each step
+    of the wheel upwards is represented by a press and release of button
+    4, and each step downwards is represented by a press and release of
+    button 5.
+</script>

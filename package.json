@@ -1,0 +1,22 @@
+{
+  "name": "node-red-contrib-vnc",
+  "version": "0.1.1",
+  "description": "Node-Red nodes to connect to a VNC server, send keyboard, clipboard or mouse events and capture screenshots",
+  "author": "James Rizzi <james@rizzi.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "jimp": "^0.10.0",
+    "rfb2": "^0.2.2"
+  },
+  "keywords": [ "node-red", "vnc" ],
+  "node-red": {
+    "nodes": {
+      "vnc-client": "vnc-client.js",
+      "info": "info.js",
+      "clipboard": "clipboard.js",
+      "keyboard": "keyboard.js",
+      "mouse": "mouse.js",
+      "screenshot": "screenshot.js"
+    }
+  }
+}

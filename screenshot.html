@@ -1,0 +1,32 @@
+<script type="text/javascript">
+  RED.nodes.registerType('screenshot',{
+      category: 'vnc',
+      color: '#a6bbcf',
+      defaults: {
+          name: {value:""},
+          client: {value:"", type:"vnc-client"},
+          showOutput: {value:false}
+      },
+      inputs:1,
+      outputs:1,
+      icon: "font-awesome/fa-camera",
+      label: function() {
+          return this.name||"screenshot";
+      }
+  });
+</script>
+
+<script type="text/html" data-template-name="screenshot">
+  <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-client"><i class="icon-tag"></i> VNC Client</label>
+    <input type="text" id="node-input-client" placeholder="Client">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="clipboard">
+  <p>Returns a PNG buffer of a screenshot from the remote server</p>
+</script>
