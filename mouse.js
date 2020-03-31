@@ -4,11 +4,13 @@ module.exports = function(RED) {
       var node = this;
       this.client = RED.nodes.getNode(config.client);
       this.client.nodes.push(this);
-      this.status({fill: "yellow", shape: "ring", text: "connecting"});
 
       node.on('input', function(msg) {
-        this.client.rfb.pointerEvent(msg.payload.x, msg.payload.y, msg.payload.mask);
-        node.send(msg);
+        this.client.perform((err) => {
+          if (err) return this.status(this.client.statuses.error);
+          this.client.rfb.pointerEvent(msg.payload.x, msg.payload.y, msg.payload.mask);
+          node.send(msg);
+        });
       });
 
   }
