@@ -5,7 +5,7 @@
   "author": "James Rizzi <james@rizzi.uk>",
   "license": "MIT",
   "dependencies": {
-    "jimp": "^0.10.0",
+    "jimp": "^0.22.7",
     "rfb2": "^0.2.2"
   },
   "repository": {
